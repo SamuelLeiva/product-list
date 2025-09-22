@@ -4,7 +4,7 @@ const buttonRegistrar = document.getElementById('buttonRegistrar')
 const buttonLimpiar = document.getElementById('buttonLimpiar')
 const buttonSuma = document.getElementById('buttonSuma')
 
-const main = document.querySelector('main')
+const listaProductos = document.getElementById('listaProductos')
 const arregloProductos = []
 
 buttonRegistrar.addEventListener('click', () => {
@@ -33,10 +33,10 @@ buttonRegistrar.addEventListener('click', () => {
 
     arregloProductos.push(item)
 
-    main.innerHTML = ''
+    listaProductos.innerHTML = ''
 
     arregloProductos.forEach(({ producto, precio }) => {
-        main.innerHTML += `<p>${producto} - $${precio}</p>`
+        listaProductos.innerHTML += `<li>${producto} - $${precio}</li>`
     })
 
     // Limpiar inputs
@@ -44,10 +44,10 @@ buttonRegistrar.addEventListener('click', () => {
     inputPrecio.value = ''
 })
 
-// Evento para limpiar el arreglo y el contenido del main
+// Evento para limpiar el arreglo y el contenido de la lista
 buttonLimpiar.addEventListener('click', () => {
     arregloProductos.length = 0
-    main.innerHTML = ''
+    listaProductos.innerHTML = ''
 });
 
 // Evento para sumar los precios de los productos
