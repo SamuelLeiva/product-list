@@ -1,11 +1,12 @@
 const inputProducto = document.getElementById('inputProducto')
 const inputPrecio = document.getElementById('inputPrecio')
-const button = document.getElementById('buttonRegistrar')
+const buttonRegistrar = document.getElementById('buttonRegistrar')
+const buttonLimpiar = document.getElementById('buttonLimpiar')
 
 const main = document.querySelector('main')
 const arregloProductos = []
 
-button.addEventListener('click', () => {
+buttonRegistrar.addEventListener('click', () => {
 
     if(!inputProducto.value || !inputPrecio.value) {
         alert('Por favor complete ambos campos')
@@ -41,3 +42,9 @@ button.addEventListener('click', () => {
     inputProducto.value = ''
     inputPrecio.value = ''
 })
+
+// Evento para limpiar el arreglo y el contenido del main
+buttonLimpiar.addEventListener('click', () => {
+    arregloProductos.length = 0
+    main.innerHTML = ''
+});
